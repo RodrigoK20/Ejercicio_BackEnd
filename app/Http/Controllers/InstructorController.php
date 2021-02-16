@@ -14,7 +14,7 @@ class InstructorController extends Controller
      */
     public function index()
     {
-        //
+        return Instructor::get();
     }
 
     /**

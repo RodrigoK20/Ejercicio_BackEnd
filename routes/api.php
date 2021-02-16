@@ -41,5 +41,10 @@ Route::group(['prefix' => 'municipio'], function () {
     Route::post('desactivar/{id}', 'MunicipioController@desactivar');
 });
 
+//Ruta Tipo Costo
+Route::get('tipo_costos', 'TipoCostoController@index');
+
+//Ruta Instructor
+Route::get('instructores', 'InstructorController@index');
 
 
