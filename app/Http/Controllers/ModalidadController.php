@@ -14,7 +14,7 @@ class ModalidadController extends Controller
      */
     public function index()
     {
-        //
+        return Modalidad::get();
     }
 
     /**

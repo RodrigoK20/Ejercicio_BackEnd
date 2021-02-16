@@ -47,4 +47,13 @@ Route::get('tipo_costos', 'TipoCostoController@index');
 //Ruta Instructor
 Route::get('instructores', 'InstructorController@index');
 
+//Ruta Modalidad
+Route::get('modalidades', 'ModalidadController@index');
 
+
+//RUTAS CURSOS
+Route::get('cursos', 'CursoController@index');
+Route::group(['prefix' => 'curso'], function () {
+    Route::post('add', 'CursoController@store');
+
+});
