@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class DetalleCurso extends Model
 {
     protected $fillable = [
-        'fecha','hora_inicio','fecha_fin','curso_id'
+        'fecha','hora_inicio','hora_fin','curso_id'
     ];
 
     //Configuracion relaciones (ONE TO MANY INVERSE - SINGULAR)

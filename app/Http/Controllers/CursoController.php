@@ -26,9 +26,27 @@ class CursoController extends Controller
     {
 
         $curso = new Curso();
-        $curso->create($request->all());
+        //dd($request);
+        $curso->create($request->all())->id;;
+        //Ultimo id 
+        $curso_last_id = Curso::orderBy('id', 'desc')->take(1)->first();
+        $lastId = $curso_last_id->id;
+        
+        //Detalle Curso 
+        $curso_id = $lastId;
+        //dd($lastId);
+        $fecha = $request->fecha;
+        $hora_inicio = $request->hora_inicio;
+        $hora_fin = $request->hora_fin;
 
-
+//       dd($lastId);
+        $details = new DetalleCurso();
+        $details->curso_id = $curso_id;
+        $details->fecha = $fecha;
+        $details->hora_inicio = $hora_inicio;
+        $details->hora_fin = $hora_fin;
+        $details->save();
+      
 
         return response()->json(['success' => 'success'], 200) ->setStatusCode(Response::HTTP_OK, Response::$statusTexts[Response::HTTP_OK]);;
 

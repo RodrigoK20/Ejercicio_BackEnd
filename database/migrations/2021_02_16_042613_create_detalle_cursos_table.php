@@ -16,8 +16,8 @@ class CreateDetalleCursosTable extends Migration
         Schema::create('detalle_cursos', function (Blueprint $table) {
             $table->id();
             $table->date('fecha');
-            $table->time('hora_inicio');
-            $table->time('hora_fin');
+            $table->string('hora_inicio');
+            $table->string('hora_fin');
 
             //FK Curso
             $table->unsignedBigInteger('curso_id');
